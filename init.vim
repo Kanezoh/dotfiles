@@ -61,7 +61,10 @@ set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
-:colorscheme jellybeans
+" :colorscheme jellybeans
+set termguicolors
+colorscheme cyberpunk
+let g:cyberpunk_cursorline="black"
 syntax on
 nmap <silent> gd <Plug>(coc-definition)
 
