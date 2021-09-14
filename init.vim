@@ -61,10 +61,14 @@ set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
+" clipboardを使用
+set clipboard=unnamed
+
 " :colorscheme jellybeans
 set termguicolors
 colorscheme cyberpunk
 let g:cyberpunk_cursorline="black"
+:colorscheme jellybeans
 syntax on
 nmap <silent> gd <Plug>(coc-definition)
 
@@ -79,11 +83,65 @@ function! s:check_back_space() abort
                 \ <SID>check_back_space() ? "\<Tab>" :
                       \ coc#refresh()
 
+" settings for tabpage
+" Anywhere SID.
+function! s:SID_PREFIX()
+  return matchstr(expand('<sfile>'), '<SNR>\d\+_\zeSID_PREFIX$')
+endfunction
+
+" Set tabline.
+function! s:my_tabline()  "{{{
+  let s = ''
+  for i in range(1, tabpagenr('$'))
+    let bufnrs = tabpagebuflist(i)
+    let bufnr = bufnrs[tabpagewinnr(i) - 1]  " first window, first appears
+    let no = i  " display 0-origin tabpagenr.
+    let mod = getbufvar(bufnr, '&modified') ? '!' : ' '
+    let title = fnamemodify(bufname(bufnr), ':t')
+    let title = '[' . title . ']'
+    let s .= '%'.i.'T'
+    let s .= '%#' . (i == tabpagenr() ? 'TabLineSel' : 'TabLine') . '#'
+    let s .= no . ':' . title
+    let s .= mod
+    let s .= '%#TabLineFill# '
+  endfor
+  let s .= '%#TabLineFill#%T%=%#TabLine#'
+  return s
+endfunction "}}}
+let &tabline = '%!'. s:SID_PREFIX() . 'my_tabline()'
+set showtabline=2 " 常にタブラインを表示
+" 
+" The prefix key.
+nnoremap    [Tag]   <Nop>
+nmap    t [Tag]
+" Tab jump
+for n in range(1, 9)
+  execute 'nnoremap <silent> [Tag]'.n  ':<C-u>tabnext'.n.'<CR>'
+endfor
+" t1 で1番左のタブ、t2 で1番左から2番目のタブにジャンプ
+
+map <silent> [Tag]c :tablast <bar> tabnew<CR>
+" tc 新しいタブを一番右に作る
+map <silent> [Tag]x :tabclose<CR>
+" tx タブを閉じる
+map <silent> [Tag]n :tabnext<CR>
+" tn 次のタブ
+map <silent> [Tag]p :tabprevious<CR>
+" tp 前のタブ
+
+" terminalをTで開く
+command! -nargs=* T split | wincmd j | resize 20 | terminal <args>
+" terminalのインサートモードをESCで抜ける
+:tnoremap <Esc> <C-\><C-n>
+" terminalを常にインサートモードから開く
+autocmd TermOpen * startinsert
+
 let g:ale_lint_on_text_changed = 1
 let g:ale_lint_on_insert_leave = 1
 let g:ale_lint_on_enter = 1
 let g:airline#extensions#ale#enabled = 1
 let g:ale_disable_lsp = 1
+let b:ale_linters = {'crystal': ['']}
 call plug#begin()
   Plug 'vim-crystal/vim-crystal'
   Plug 'dense-analysis/ale'
