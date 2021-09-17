@@ -64,10 +64,6 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 " clipboardを使用
 set clipboard=unnamed
 
-" :colorscheme jellybeans
-set termguicolors
-colorscheme cyberpunk
-let g:cyberpunk_cursorline="black"
 :colorscheme jellybeans
 syntax on
 nmap <silent> gd <Plug>(coc-definition)
@@ -147,4 +143,5 @@ call plug#begin()
   Plug 'dense-analysis/ale'
   Plug 'vim-airline/vim-airline'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
 call plug#end()
