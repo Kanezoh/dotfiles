@@ -64,6 +64,10 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 " clipboardを使用
 set clipboard=unnamed
 
+" 不可視文字を可視化する
+set list
+set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+
 :colorscheme jellybeans
 syntax on
 nmap <silent> gd <Plug>(coc-definition)
@@ -159,7 +163,12 @@ let g:netrw_liststyle = 3
 
 " Enterで、タブ表示
 let g:netrw_browse_split = 3
-
+if system('uname -a | grep Microsoft') != ''
+  augroup myYank
+    autocmd!
+    autocmd TextYankPost * :call system('clip.exe', @")
+  augroup END
+endif
 let g:ale_lint_on_text_changed = 1
 let g:ale_lint_on_insert_leave = 1
 let g:ale_lint_on_enter = 1
