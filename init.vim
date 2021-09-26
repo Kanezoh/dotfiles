@@ -169,6 +169,7 @@ if system('uname -a | grep Microsoft') != ''
     autocmd TextYankPost * :call system('clip.exe', @")
   augroup END
 endif
+
 let g:ale_lint_on_text_changed = 1
 let g:ale_lint_on_insert_leave = 1
 let g:ale_lint_on_enter = 1
@@ -181,4 +182,5 @@ call plug#begin()
   Plug 'vim-airline/vim-airline'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
+  Plug 'airblade/vim-gitgutter'
 call plug#end()
