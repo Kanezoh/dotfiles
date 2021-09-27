@@ -156,7 +156,7 @@ let g:netrw_preview=1
 let g:netrw_altv = 1
 
 " 分割で開いたときに80%のサイズで開く
-let g:netrw_winsize = 80
+let g:netrw_winsize = 50
 
 " 表示形式をTreeViewに変更
 let g:netrw_liststyle = 3
@@ -183,4 +183,6 @@ call plug#begin()
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
   Plug 'airblade/vim-gitgutter'
+  Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-endwise'
 call plug#end()
