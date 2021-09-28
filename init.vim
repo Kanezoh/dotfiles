@@ -61,27 +61,12 @@ set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
-" clipboardを使用
-set clipboard=unnamed
-
 " 不可視文字を可視化する
 set list
 set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 
 :colorscheme jellybeans
 syntax on
-nmap <silent> gd <Plug>(coc-definition)
-
-" use <tab> for trigger completion and navigate to the next complete item
-function! s:check_back_space() abort
-  let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~ '\s'
-    endfunction
-
-    inoremap <silent><expr> <Tab>
-          \ pumvisible() ? "\<C-n>" :
-                \ <SID>check_back_space() ? "\<Tab>" :
-                      \ coc#refresh()
 
 " settings for tabpage
 " Anywhere SID.
@@ -136,46 +121,6 @@ command! -nargs=* T split | wincmd j | resize 20 | terminal <args>
 " terminalを常にインサートモードから開く
 autocmd TermOpen * startinsert
 
-" netrwの設定
-" ls -laのような表示になります
-let g:netrw_liststyle=1
-
-" サイズを(K,M,G)で表示
-let g:netrw_sizestyle="H"
-
-" 日付フォーマットを yyyy/mm/dd(曜日) hh:mm:ss で表示
-let g:netrw_timefmt="%Y/%m/%d(%a) %H:%M:%S"
-
-" ヘッダを非表示にする
-let g:netrw_banner=0
-
-" プレビューウィンドウを垂直分割で表示する
-let g:netrw_preview=1
-
-" 左右分割を右側に開く
-let g:netrw_altv = 1
-
-" 分割で開いたときに80%のサイズで開く
-let g:netrw_winsize = 50
-
-" 表示形式をTreeViewに変更
-let g:netrw_liststyle = 3
-
-" Enterで、タブ表示
-let g:netrw_browse_split = 3
-if system('uname -a | grep Microsoft') != ''
-  augroup myYank
-    autocmd!
-    autocmd TextYankPost * :call system('clip.exe', @")
-  augroup END
-endif
-
-let g:ale_lint_on_text_changed = 1
-let g:ale_lint_on_insert_leave = 1
-let g:ale_lint_on_enter = 1
-let g:airline#extensions#ale#enabled = 1
-let g:ale_disable_lsp = 1
-let b:ale_linters = {'crystal': ['']}
 call plug#begin()
   Plug 'vim-crystal/vim-crystal'
   Plug 'dense-analysis/ale'
@@ -186,3 +131,5 @@ call plug#begin()
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-endwise'
 call plug#end()
+
+runtime! _config/*.vim
