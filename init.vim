@@ -12,6 +12,8 @@ set hidden
 " 入力中のコマンドをステータスに表示する
 set showcmd
 
+set mmp=2000
+
 
 " 見た目系
 " 行番号を表示
@@ -61,12 +63,20 @@ set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
+" 括弧、波括弧を自動で補完する
+inoremap { {}<LEFT>
+inoremap ( ()<LEFT>
+
 " 不可視文字を可視化する
 set list
 set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 
 :colorscheme jellybeans
 syntax on
+
+" quickfixのショートカット
+nnoremap cp :cprevious<CR>
+nnoremap cn :cnext<CR>
 
 " settings for tabpage
 " Anywhere SID.
@@ -131,5 +141,4 @@ call plug#begin()
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-endwise'
 call plug#end()
-
 runtime! _config/*.vim
