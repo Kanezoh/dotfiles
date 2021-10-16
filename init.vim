@@ -60,10 +60,30 @@ inoremap { {}<LEFT>
 inoremap ( ()<LEFT>
 inoremap [ []<LEFT>
 
+" leaderキーをスペースに割り当てる
+let mapleader = "\<Space>"
+map <Leader> <Plug>(easymotion-prefix)
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `s{char}{label}`
+" nmap s <Plug>(easymotion-overwin-f)
+" or
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+
 " 不可視文字を可視化する
 set list
 set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
-
+let twitvim_count = 1000
 :colorscheme jellybeans
 
 call plug#begin()
@@ -75,5 +95,7 @@ call plug#begin()
   Plug 'airblade/vim-gitgutter'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-endwise'
+  Plug 'easymotion/vim-easymotion'
+  Plug 'https://github.com/twitvim/twitvim.git'
 call plug#end()
 runtime! _config/*.vim
