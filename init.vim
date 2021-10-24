@@ -83,8 +83,10 @@ map <Leader>k <Plug>(easymotion-k)
 " 不可視文字を可視化する
 set list
 set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
-let twitvim_count = 1000
 :colorscheme jellybeans
+
+let g:tweetvim_tweet_per_page = 1000
+let g:tweetvim_display_username = 1
 
 call plug#begin()
   Plug 'vim-crystal/vim-crystal'
@@ -96,6 +98,12 @@ call plug#begin()
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-endwise'
   Plug 'easymotion/vim-easymotion'
-  Plug 'https://github.com/twitvim/twitvim.git'
+  Plug 'basyura/TweetVim'
+  Plug 'mattn/webapi-vim'
+  Plug 'basyura/twibill.vim'
+  Plug 'tyru/open-browser.vim'
+  Plug 'h1mesuke/unite-outline'
+  Plug 'basyura/bitly.vim'
+  Plug 'Shougo/unite.vim'
 call plug#end()
 runtime! _config/*.vim
