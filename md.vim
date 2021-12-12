@@ -66,7 +66,7 @@ set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 
 :colorscheme jellybeans
 
-if system('uname -a | grep Microsoft') != ''
+if system('uname -a | grep microsoft') != ''
   let g:previm_open_cmd = '/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe'
   let g:previm_wsl_mode = 1
 endif
