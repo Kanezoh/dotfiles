@@ -84,6 +84,7 @@ map <Leader>k <Plug>(easymotion-k)
 set list
 set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 :colorscheme jellybeans
+set tw=0
 
 call plug#begin()
   Plug 'vim-crystal/vim-crystal'
