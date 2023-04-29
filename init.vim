@@ -60,44 +60,27 @@ inoremap { {}<LEFT>
 inoremap ( ()<LEFT>
 inoremap [ []<LEFT>
 
-" leaderキーをスペースに割り当てる
-let mapleader = "\<Space>"
-map <Leader> <Plug>(easymotion-prefix)
-let g:EasyMotion_do_mapping = 0 " Disable default mappings
-
-" Jump to anywhere you want with minimal keystrokes, with just one key binding.
-" `s{char}{label}`
-" nmap s <Plug>(easymotion-overwin-f)
-" or
-" `s{char}{char}{label}`
-" Need one more keystroke, but on average, it may be more comfortable.
-nmap s <Plug>(easymotion-overwin-f2)
-
-" Turn on case insensitive feature
-let g:EasyMotion_smartcase = 1
-
-" JK motions: Line motions
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-
 " 不可視文字を可視化する
 set list
 set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 :colorscheme jellybeans
 
+" 背景透過の設定
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
+highlight LineNr ctermbg=none
+highlight Folded ctermbg=none
+highlight EndOfBuffer ctermbg=none 
+
 call plug#begin()
-  Plug 'vim-crystal/vim-crystal'
   Plug 'dense-analysis/ale'
   Plug 'vim-airline/vim-airline'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
   Plug 'airblade/vim-gitgutter'
   Plug 'tpope/vim-fugitive'
-  Plug 'tpope/vim-endwise'
   Plug 'easymotion/vim-easymotion'
-  Plug 'basyura/TweetVim'
   Plug 'mattn/webapi-vim'
-  Plug 'basyura/twibill.vim'
   Plug 'tyru/open-browser.vim'
   Plug 'h1mesuke/unite-outline'
   Plug 'basyura/bitly.vim'
