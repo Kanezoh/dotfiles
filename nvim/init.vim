@@ -85,5 +85,6 @@ call plug#begin()
   Plug 'h1mesuke/unite-outline'
   Plug 'basyura/bitly.vim'
   Plug 'Shougo/unite.vim'
+  Plug 'vim-test/vim-test'
 call plug#end()
 runtime! _config/*.vim
