@@ -2,6 +2,8 @@
   "suggest.noselect": true,
   "suggest.preferCompleteThanJumpPlaceholder": true,
   "diagnostic.displayByAle": true,
+  "diagnostic.checkCurrentLine": true,
+  "diagnostic.virtualText": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
     "html",
@@ -17,13 +19,19 @@
     "haskell": {
       "command": "haskell-language-server-wrapper",
       "args": ["--lsp"],
-      "rootPatterns": ["*.cabal", "stack.yaml", "cabal.project", "package.yaml", "hie.yaml"],
+      "rootPatterns": [
+        "*.cabal",
+        "stack.yaml",
+        "cabal.project",
+        "package.yaml",
+        "hie.yaml"
+      ],
       "filetypes": ["haskell", "lhaskell"]
     },
     "clangd": {
-     "command": "clangd",
-     "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
-     "filetypes": ["c", "cpp", "objc", "objcpp"]
-   }
+      "command": "clangd",
+      "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
+      "filetypes": ["c", "cpp", "objc", "objcpp"]
+    }
   }
 }

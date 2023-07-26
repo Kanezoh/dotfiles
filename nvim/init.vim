@@ -79,7 +79,6 @@ call plug#begin()
   Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
   Plug 'airblade/vim-gitgutter'
   Plug 'tpope/vim-fugitive'
-  Plug 'easymotion/vim-easymotion'
   Plug 'mattn/webapi-vim'
   Plug 'tyru/open-browser.vim'
   Plug 'h1mesuke/unite-outline'
