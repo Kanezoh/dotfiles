@@ -85,5 +85,6 @@ call plug#begin()
   Plug 'basyura/bitly.vim'
   Plug 'Shougo/unite.vim'
   Plug 'vim-test/vim-test'
+  Plug 'rking/ag.vim'
 call plug#end()
 runtime! _config/*.vim
