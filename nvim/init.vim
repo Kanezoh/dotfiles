@@ -72,6 +72,9 @@ highlight LineNr ctermbg=none
 highlight Folded ctermbg=none
 highlight EndOfBuffer ctermbg=none 
 
+" leaderキーをspaceに割り当てる
+let mapleader = "\<Space>"
+
 call plug#begin()
   Plug 'dense-analysis/ale'
   Plug 'vim-airline/vim-airline'
@@ -86,5 +89,6 @@ call plug#begin()
   Plug 'Shougo/unite.vim'
   Plug 'vim-test/vim-test'
   Plug 'rking/ag.vim'
+  Plug 'preservim/nerdtree'
 call plug#end()
 runtime! _config/*.vim
