@@ -75,6 +75,9 @@ highlight EndOfBuffer ctermbg=none
 " leaderキーをspaceに割り当てる
 let mapleader = "\<Space>"
 
+command CpPath let @+ = expand('%')
+command CpFullPath let @+ = expand('%:p')
+
 call plug#begin()
   Plug 'dense-analysis/ale'
   Plug 'vim-airline/vim-airline'
