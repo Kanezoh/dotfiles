@@ -1,5 +1,3 @@
-require("tabpage")
-
 -- setting
 -- 文字コードをUFT-8に設定
 vim.o.fenc="utf-8"
@@ -69,11 +67,11 @@ vim.o.listchars="tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%"
 vim.cmd[[colorscheme jellybeans]]
 
 -- 背景透過の設定
-vim.cmd 'autocmd ColorScheme * highlight Normal ctermbg=none'
-vim.cmd 'autocmd ColorScheme * highlight NonText ctermbg=none'
-vim.cmd 'autocmd ColorScheme * highlight LineNr ctermbg=none'
-vim.cmd 'autocmd ColorScheme *  highlight Folded ctermbg=none'
-vim.cmd 'autocmd ColorScheme *  highlight EndOfBuffer ctermbg=none '
+-- vim.cmd 'autocmd ColorScheme * highlight Normal ctermbg=none'
+-- vim.cmd 'autocmd ColorScheme * highlight NonText ctermbg=none'
+-- vim.cmd 'autocmd ColorScheme * highlight LineNr ctermbg=none'
+-- vim.cmd 'autocmd ColorScheme *  highlight Folded ctermbg=none'
+-- vim.cmd 'autocmd ColorScheme *  highlight EndOfBuffer ctermbg=none '
 
 -- leaderキーをspaceに割り当てる
  vim.g.mapleader = " "
@@ -100,4 +98,14 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
 vim.call('plug#end')
 
 -- runtime! _config/*.vim
--- require("_config/nerdtree")
+require("ale")
+require("tabpage")
+require("nerdtree")
+require("clipboard")
+require("coc")
+require("ctrlp")
+require("terminal")
+require("fugitive")
+require("quickfix")
+require("test")
+
