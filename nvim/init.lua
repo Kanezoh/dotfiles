@@ -72,6 +72,8 @@ vim.cmd[[colorscheme jellybeans]]
 -- vim.cmd 'autocmd ColorScheme * highlight LineNr ctermbg=none'
 -- vim.cmd 'autocmd ColorScheme *  highlight Folded ctermbg=none'
 -- vim.cmd 'autocmd ColorScheme *  highlight EndOfBuffer ctermbg=none '
+-- vim.opt.winblend = 0 -- ウィンドウの不透明度
+-- vim.opt.pumblend = 0 -- ポップアップメニューの不透明度
 
 -- leaderキーをspaceに割り当てる
  vim.g.mapleader = " "
