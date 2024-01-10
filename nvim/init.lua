@@ -66,9 +66,14 @@ vim.o.listchars="tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%"
 -- カラースキーム
 vim.cmd[[
 set termguicolors
-colorscheme cyberpunk
-let g:airline_theme='cyberpunk'
+colorscheme jellybeans
 ]]
+
+-- vim.cmd[[
+-- set termguicolors
+-- colorscheme cyberpunk
+-- let g:airline_theme='cyberpunk'
+-- ]]
 
 -- 背景透過の設定
 -- vim.cmd 'autocmd ColorScheme * highlight Normal ctermbg=none'
@@ -84,6 +89,11 @@ let g:airline_theme='cyberpunk'
 
 -- クリップボードを同期
 vim.o.clipboard = "unnamedplus"
+
+vim.cmd [[
+command CpPath let @+ = expand('%')
+command CpFullPath let @+ = expand('%:p')
+]]
 
 local Plug = vim.fn['plug#']
 vim.call('plug#begin', '~/.config/nvim/plugged')

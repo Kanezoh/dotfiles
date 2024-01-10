@@ -6,6 +6,7 @@ vim.api.nvim_set_keymap('n', '<leader>g', ':TestVisit<CR>', { silent = true, nor
 
 vim.g['test#javascript#runner'] = 'jest'
 
+-- vim.cmd[[
 -- function! test#javascript#jest#executable() abort
 --   if filereadable('node_modules/.bin/jest')
 --     return 'devcontainer exec --workspace-folder . node_modules/.bin/jest'
@@ -13,4 +14,4 @@ vim.g['test#javascript#runner'] = 'jest'
 --     return 'jest'
 --   endif
 -- endfunction
--- 
+-- ]]
