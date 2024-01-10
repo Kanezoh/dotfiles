@@ -64,7 +64,11 @@ vim.o.list=true
 vim.o.listchars="tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%"
 
 -- カラースキーム
-vim.cmd[[colorscheme jellybeans]]
+vim.cmd[[
+set termguicolors
+colorscheme cyberpunk
+let g:airline_theme='cyberpunk'
+]]
 
 -- 背景透過の設定
 -- vim.cmd 'autocmd ColorScheme * highlight Normal ctermbg=none'
@@ -97,6 +101,7 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
   Plug 'vim-test/vim-test'
   Plug 'rking/ag.vim'
   Plug 'preservim/nerdtree'
+  Plug 'thedenisnikulin/vim-cyberpunk'
 vim.call('plug#end')
 
 -- runtime! _config/*.vim
