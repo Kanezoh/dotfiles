@@ -1,6 +1,13 @@
 -- settings of this file is officially recommended, see below.
 -- https://github.com/neoclide/coc.nvim?tab=readme-ov-file#example-lua-configuration
 
+
+-- 言語の設定
+vim.g.coc_global_extensions = {
+  'coc-rust-analyzer',
+  'coc-pyright'
+}
+
 -- Having longer updatetime (default is 4000 ms = 4s) leads to noticeable
 -- delays and poor user experience
 vim.opt.updatetime = 300

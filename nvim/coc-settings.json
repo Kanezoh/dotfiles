@@ -11,9 +11,9 @@
     "typescriptreact",
     "typescript",
     "javascriptreact",
-    "javascript",
     "json",
-    "graphql"
+    "graphql",
+    "rs"
   ],
   "languageserver": {
     "haskell": {

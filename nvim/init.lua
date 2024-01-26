@@ -95,6 +95,9 @@ command CpPath let @+ = expand('%')
 command CpFullPath let @+ = expand('%:p')
 ]]
 
+-- rustfmtの設定
+vim.g.rustfmt_autosave = 1
+
 local Plug = vim.fn['plug#']
 vim.call('plug#begin', '~/.config/nvim/plugged')
   Plug 'dense-analysis/ale'
@@ -112,6 +115,8 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
   Plug 'rking/ag.vim'
   Plug 'preservim/nerdtree'
   Plug 'thedenisnikulin/vim-cyberpunk'
+  Plug 'tpope/vim-commentary'
+  Plug 'rust-lang/rust.vim'
 vim.call('plug#end')
 
 -- runtime! _config/*.vim
