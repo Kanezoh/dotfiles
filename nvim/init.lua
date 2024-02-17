@@ -117,6 +117,7 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
   Plug 'thedenisnikulin/vim-cyberpunk'
   Plug 'tpope/vim-commentary'
   Plug 'rust-lang/rust.vim'
+  Plug 'tpope/vim-rails'
 vim.call('plug#end')
 
 -- runtime! _config/*.vim

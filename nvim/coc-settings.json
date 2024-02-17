@@ -13,8 +13,11 @@
     "javascriptreact",
     "json",
     "graphql",
-    "rs"
+    "rs",
+    "javascript",
+    "js"
   ],
+  "solargraph.shell": "/bin/zsh",
   "languageserver": {
     "haskell": {
       "command": "haskell-language-server-wrapper",
