@@ -95,6 +95,12 @@ command CpPath let @+ = expand('%')
 command CpFullPath let @+ = expand('%:p')
 ]]
 
+vim.cmd[[
+set wildignore+=*/node_modules/**
+set wildignore+=*/dist/**
+set wildignore+=*/japanese-addresses-master/**
+]]
+
 -- rustfmtの設定
 vim.g.rustfmt_autosave = 1
 
