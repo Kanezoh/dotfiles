@@ -124,7 +124,15 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
   Plug 'tpope/vim-commentary'
   Plug 'rust-lang/rust.vim'
   Plug 'tpope/vim-rails'
+  Plug 'zbirenbaum/copilot.lua'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug('CopilotC-Nvim/CopilotChat.nvim', { branch='canary' })
 vim.call('plug#end')
+
+require("CopilotChat").setup {
+  debug = true, -- Enable debugging
+  -- See Configuration section for rest
+}
 
 -- runtime! _config/*.vim
 require("ale")
