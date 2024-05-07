@@ -65,8 +65,10 @@ vim.o.listchars="tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%"
 
 -- カラースキーム
 vim.cmd[[
+set bg=light
 set termguicolors
-colorscheme jellybeans
+colorscheme pencil
+let g:pencil_higher_contrast_ui = 1
 ]]
 
 -- vim.cmd[[
@@ -91,8 +93,8 @@ colorscheme jellybeans
 vim.o.clipboard = "unnamedplus"
 
 vim.cmd [[
-command CpPath let @+ = expand('%')
-command CpFullPath let @+ = expand('%:p')
+command! CpPath let @+ = expand('%')
+command! CpFullPath let @+ = expand('%:p')
 ]]
 
 vim.cmd[[
@@ -124,6 +126,7 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
   Plug 'tpope/vim-commentary'
   Plug 'rust-lang/rust.vim'
   Plug 'tpope/vim-rails'
+  Plug 'tpope/vim-endwise'
   Plug 'zbirenbaum/copilot.lua'
   Plug 'nvim-lua/plenary.nvim'
   Plug('CopilotC-Nvim/CopilotChat.nvim', { branch='canary' })
