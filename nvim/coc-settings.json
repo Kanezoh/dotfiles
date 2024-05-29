@@ -4,6 +4,7 @@
   "diagnostic.displayByAle": true,
   "diagnostic.checkCurrentLine": true,
   "diagnostic.virtualText": true,
+  "coc.preferences.formatOnSave": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
     "html",
@@ -15,9 +16,14 @@
     "graphql",
     "rs",
     "javascript",
-    "js"
+    "js",
+    "ruby",
+    "rb"
   ],
+  "solargraph.diagnostics": true,
   "solargraph.shell": "/bin/zsh",
+  "solargraph.autoformat": true,
+  "solargraph.formatting": true,
   "languageserver": {
     "haskell": {
       "command": "haskell-language-server-wrapper",

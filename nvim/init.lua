@@ -129,6 +129,7 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
   Plug 'tpope/vim-endwise'
   Plug 'zbirenbaum/copilot.lua'
   Plug 'nvim-lua/plenary.nvim'
+  Plug 'tpope/vim-surround'
   Plug('CopilotC-Nvim/CopilotChat.nvim', { branch='canary' })
 vim.call('plug#end')
 
