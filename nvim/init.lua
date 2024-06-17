@@ -111,7 +111,6 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
   Plug 'dense-analysis/ale'
   Plug 'vim-airline/vim-airline'
   Plug('neoclide/coc.nvim', {branch='release'})
-  Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
   Plug 'airblade/vim-gitgutter'
   Plug 'tpope/vim-fugitive'
   Plug 'mattn/webapi-vim'
@@ -131,6 +130,7 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
   Plug 'nvim-lua/plenary.nvim'
   Plug 'tpope/vim-surround'
   Plug('CopilotC-Nvim/CopilotChat.nvim', { branch='canary' })
+  Plug ('nvim-telescope/telescope.nvim', { tag='0.1.6' })
 vim.call('plug#end')
 
 require("CopilotChat").setup {
@@ -144,9 +144,9 @@ require("tabpage")
 require("nerdtree")
 require("clipboard")
 require("coc")
-require("ctrlp")
 require("terminal")
 require("fugitive")
 require("quickfix")
+require("telescope")
 require("test")
 
