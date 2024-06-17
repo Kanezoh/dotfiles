@@ -20,10 +20,6 @@
     "ruby",
     "rb"
   ],
-  "solargraph.diagnostics": true,
-  "solargraph.shell": "/bin/zsh",
-  "solargraph.autoformat": true,
-  "solargraph.formatting": true,
   "languageserver": {
     "haskell": {
       "command": "haskell-language-server-wrapper",
@@ -41,6 +37,11 @@
       "command": "clangd",
       "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
       "filetypes": ["c", "cpp", "objc", "objcpp"]
+    },
+    "rubocop": {
+      "command": "bundle",
+      "args": ["exec", "rubocop", "--lsp"],
+      "filetypes": ["ruby"]
     }
   }
 }
