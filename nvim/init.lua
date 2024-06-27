@@ -131,6 +131,7 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
   Plug 'tpope/vim-surround'
   Plug('CopilotC-Nvim/CopilotChat.nvim', { branch='canary' })
   Plug ('nvim-telescope/telescope.nvim', { tag='0.1.6' })
+  Plug 'kdheepak/lazygit.nvim'
 vim.call('plug#end')
 
 require("CopilotChat").setup {
@@ -148,5 +149,6 @@ require("terminal")
 require("fugitive")
 require("quickfix")
 require("telescope")
+require("lazygit")
 require("test")
 
