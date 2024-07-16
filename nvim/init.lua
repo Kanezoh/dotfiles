@@ -150,6 +150,6 @@ require("terminal")
 require("fugitive")
 require("quickfix")
 require("_telescope")
-require("lazygit")
+require("_lazygit")
 require("test")
 
