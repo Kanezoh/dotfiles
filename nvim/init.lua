@@ -130,7 +130,8 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
   Plug 'nvim-lua/plenary.nvim'
   Plug 'tpope/vim-surround'
   Plug('CopilotC-Nvim/CopilotChat.nvim', { branch='canary' })
-  Plug ('nvim-telescope/telescope.nvim', { tag='0.1.6' })
+  Plug ('nvim-telescope/telescope.nvim', { tag='0.1.8' })
+  Plug 'fdschmidt93/telescope-egrepify.nvim'
   Plug 'kdheepak/lazygit.nvim'
 vim.call('plug#end')
 
@@ -148,7 +149,7 @@ require("coc")
 require("terminal")
 require("fugitive")
 require("quickfix")
-require("telescope")
+require("_telescope")
 require("lazygit")
 require("test")
 
