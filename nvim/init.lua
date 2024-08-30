@@ -71,11 +71,13 @@ colorscheme pencil
 let g:pencil_higher_contrast_ui = 1
 ]]
 
--- vim.cmd[[
+vim.cmd[[
+   colorscheme jellybeans
+]]
 -- set termguicolors
 -- colorscheme cyberpunk
 -- let g:airline_theme='cyberpunk'
--- ]]
+
 
 -- 背景透過の設定
 -- vim.cmd 'autocmd ColorScheme * highlight Normal ctermbg=none'
@@ -106,6 +108,16 @@ set wildignore+=*/japanese-addresses-master/**
 -- rustfmtの設定
 vim.g.rustfmt_autosave = 1
 
+vim.cmd [[
+" https://qiita.com/izumin5210/items/d2e352de1e541ff97079
+" <C-w> 系を Vim Tmux Navigator に移譲する
+nnoremap <silent> <C-w>h :TmuxNavigateLeft<cr>
+nnoremap <silent> <C-w>j :TmuxNavigateDown<cr>
+nnoremap <silent> <C-w>k :TmuxNavigateUp<cr>
+nnoremap <silent> <C-w>l :TmuxNavigateRight<cr>
+nnoremap <silent> <C-w>\\ :TmuxNavigatePrevious<cr>
+]]
+
 local Plug = vim.fn['plug#']
 vim.call('plug#begin', '~/.config/nvim/plugged')
   Plug 'dense-analysis/ale'
@@ -133,6 +145,7 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
   Plug ('nvim-telescope/telescope.nvim', { tag='0.1.8' })
   Plug 'fdschmidt93/telescope-egrepify.nvim'
   Plug 'kdheepak/lazygit.nvim'
+  Plug 'christoomey/vim-tmux-navigator'
 vim.call('plug#end')
 
 require("CopilotChat").setup {
