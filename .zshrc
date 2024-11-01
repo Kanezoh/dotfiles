@@ -22,8 +22,8 @@ alias devcon="devcontainer exec --workspace-folder . bash"
 export PATH="/Users/shunya.kaneko/Library/Python/3.9/bin:$PATH"
 export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
-export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init -)"
 eval "$(rbenv init - zsh)"
 
@@ -34,7 +34,6 @@ setopt PROMPT_SUBST ; PS1='%F{green}%n@%m%f: %F{cyan}%~%f %F{red}$(__git_ps1 "(%
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
-
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/shunya.kaneko/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/shunya.kaneko/Downloads/google-cloud-sdk/path.zsh.inc'; fi
@@ -87,3 +86,4 @@ function peco-get-destination-from-cdr() {
   peco --query "$LBUFFER"
 }
 
+export PATH="/usr/local/go/bin:$PATH"
